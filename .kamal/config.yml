@@ -1,0 +1,4 @@
+registry:
+  server: ghcr.io
+  username: leesheppard
+  password: "<%= ENV['GHCR_TOKEN'] %>"
