@@ -81,18 +81,18 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: myapp_803_production
-    username: myapp_803
+    database: <%= ENV["MYAPP_803_DATABASE_NAME"] %>
+    username: <%= ENV["MYAPP_803_DATABASE_USERNAME"] %>
     password: <%= ENV["MYAPP_803_DATABASE_PASSWORD"] %>
-  cache:
-    <<: *primary_production
-    database: myapp_803_production_cache
-    migrations_paths: db/cache_migrate
-  queue:
-    <<: *primary_production
-    database: myapp_803_production_queue
-    migrations_paths: db/queue_migrate
-  cable:
-    <<: *primary_production
-    database: myapp_803_production_cable
-    migrations_paths: db/cable_migrate
+#  cache:
+#    <<: *primary_production
+#    database: myapp_803_production_cache
+#    migrations_paths: db/cache_migrate
+#  queue:
+#    <<: *primary_production
+#    database: myapp_803_production_queue
+#    migrations_paths: db/queue_migrate
+#  cable:
+#    <<: *primary_production
+#    database: myapp_803_production_cable
+#    migrations_paths: db/cable_migrate
