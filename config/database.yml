@@ -79,12 +79,12 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  primary: &primary_production
-    <<: *default
-    host: <%= ENV["MYAPP_803_DATABASE_HOST"] %>
-    database: <%= ENV["MYAPP_803_DATABASE_NAME"] %>
-    username: <%= ENV["MYAPP_803_DATABASE_USERNAME"] %>
-    password: <%= ENV["MYAPP_803_DATABASE_PASSWORD"] %>
+  <<: *default
+  DATABASE_URL: <%= ENV["DATABASE_URL"] %>
+  host: <%= ENV["MYAPP_803_DATABASE_HOST"] %>
+  database: <%= ENV["MYAPP_803_DATABASE_NAME"] %>
+  username: <%= ENV["MYAPP_803_DATABASE_USERNAME"] %>
+  password: <%= ENV["MYAPP_803_DATABASE_PASSWORD"] %>
 #  cache:
 #    <<: *primary_production
 #    database: myapp_803_production_cache
